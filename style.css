@@ -1,0 +1,219 @@
+/* FINAL*/
+* {
+    margin: 0;
+    padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../images/mainbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN MENU CONTAINER */
+.container {
+    background-color: #eab308;
+    padding: 40px 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px; 
+    position: relative;
+}
+
+
+.wide-content {
+    max-width: 700px; 
+}
+
+h1 {
+    color: black;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 10px;
+    font-size: 10px;
+    color: black;
+}
+
+/* BUTTONS IN MAIN MENU*/
+
+.tray-checkbox {
+    display: none;
+}
+
+.chess-button {
+    display: inline-block;
+    background-color: black;
+    color: rgb(234, 179, 8);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.chess-button:hover {
+    background-color: #333;
+}
+
+/* HIDE TRAY */
+.tray {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tray-checkbox:checked ~ .tray {
+    max-height: 400px;
+    opacity: 1;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS INSIDE TRAY */
+.tray-btn {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #eab308;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.tray-btn:hover {
+    background-color: black;
+}
+
+/* PIECES */
+.pieces-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/*PIECE BUTTON*/
+.piece-menu-btn {
+    display: block;
+    background-color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    aspect-ratio: 1 / 1; 
+}
+
+.piece-menu-btn:hover {
+    transform: scale(1.05);
+    border-color: white;
+}
+
+/*PIECE IMG IN BUTTON*/
+.piece-menu-btn img {
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover 
+
+}
+
+
+/*ALL PIECES IMG*/
+.piece-profile-img {
+    display: block;
+    background-color: black;
+    border-radius: 15px;
+    border: 3px solid transparent;
+    width: 50%;
+    height: 50%;
+    margin : 0 auto 20px auto;
+}
+
+/*TEXT IN PIECES*/
+.piece-description {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/*NESTED LIST IN BOARD*/
+.piece-description ul {
+    list-style-type: disc; 
+    padding-left: 25px; 
+    margin-top: 10px; 
+}
+
+.piece-description .nested-list {
+    list-style-type: circle;
+    padding-left: 20px; 
+    margin-top: 5px; 
+}
+
+.piece-description li {
+    margin-bottom: 5px;
+}
+
+.piece-description img {
+    display: block;
+    max-width: 100%; /* Ensures responsiveness */
+    width: 200px;    /* Sets the desired width */
+    height: auto;
+    margin: 10px 0 5px 0; /* Add some spacing */
+    border-radius: 5px;
+    border: 1px solid black;;}
+
+/*BACK AND TO NAVIGATE BUTTON*/
+.back-btn {
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.back-btn:hover {
+    border-bottom: 2px solid black;
+}
+
+@media (max-width: 480px) {
+.container {
+    width: 95%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px; 
+}
+
+.chess-button {
+    padding: 12px 30px;
+    font-size: 16px;
+}
+}
